@@ -310,6 +310,93 @@
     font-size: 0.95em;
     line-height: 1.5;
 }
+        /* Styles pour les scénarios d'usage */
+.scenario-container {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.scenario-timeline {
+    margin-top: 25px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.scenario-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.scenario-event {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.event-number {
+    position: absolute;
+    left: -40px;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+    z-index: 1;
+}
+
+.event-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.event-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.event-content h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.event-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .scenario-timeline {
+        padding-left: 30px;
+    }
+    
+    .event-number {
+        left: -30px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+}
     </style>
 </head>
 <body>
@@ -325,6 +412,7 @@
                 <li><a href="#interviews">Interviews</a></li>
                 <li><a href="#problemes">Problèmes</a></li>
                 <li><a href="#personas">Personas</a></li>
+                <li><a href="#scenarios">Scénarios</a></li>
                 <li><a href="#interaction-points">Points d'Interaction</a></li>
                 <li><a href="#brainstorming">Brainstorming</a></li>
             </ul>
@@ -360,7 +448,7 @@
     <div>
         <button class="interview-toggle" onclick="toggleInterview('imane1')">📝 Interview 1</button>
         <div id="imane1" class="interview-content">
-            <p><strong>Date:</strong> [21/01/2026]</p>
+            <p><strong>Date:</strong> 21/01/2026</p>
             <hr style="margin: 10px 0;">
             <p>📄 <a href="https://docs.google.com/document/d/17x_Y2qZVooJmYfl_F1doZuy3tmypQ_IHqA87bhNDm7A/edit?tab=t.0#heading=h.o62u5bnjtb5p" target="_blank" style="color: #667eea; font-weight: 600; text-decoration: none;">Voir la transcription complète de l'interview →</a></p>
             <br>
@@ -373,7 +461,7 @@
     <div>
         <button class="interview-toggle" onclick="toggleInterview('lucie1')">📝 Interview 1</button>
         <div id="lucie1" class="interview-content">
-            <p><strong>Date:</strong> [31/01/2026]</p>
+            <p><strong>Date:</strong> 31/01/2026</p>
             <hr style="margin: 10px 0;">
             <a href="https://docs.google.com/document/d/1-jB_f2JFZ8ZF9K6cdY4Rb9nw31jdDpCXB1nVGxH_gWk/edit?tab=t.5td5mj2p4ucl" 
                target="_blank" 
@@ -388,19 +476,18 @@
         <div class="interview-section">
     <h3>Dounya</h3>
     <div>
-        <button class="interview-toggle" onclick="toggleInterview('Dounya')">📝 Interview 1</button>
+        <button class="interview-toggle" onclick="toggleInterview('dounya1')">📝 Interview 1</button>
         <div id="dounya1" class="interview-content">
-            <p><strong>Date:</strong> [30/01/2026]</p>
+            <p><strong>Date:</strong> 30/01/2026</p>
             <hr style="margin: 10px 0;">
             <a href="https://docs.google.com/document/d/1-jB_f2JFZ8ZF9K6cdY4Rb9nw31jdDpCXB1nVGxH_gWk/edit?tab=t.xaw8aqc0levk" 
                target="_blank" 
                style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; margin: 10px 0;">
                 📄 Lire la transcription complète
             </a>
-            <br><br>
         </div>
     </div>
-    <div>
+</div>
         </section>
 
         <section id="problemes">
@@ -450,6 +537,129 @@
                 </li>
             </ul>
         </section>
+
+        <section id="scenarios">
+    <h2>📖 Scénarios d'Usage</h2>
+    <p style="margin-bottom: 30px; color: #666;">Scénarios d'utilisation détaillés pour chaque type d'utilisateur</p>
+    
+    <!-- Persona 1 - Marie -->
+    <div class="scenario-container">
+        <h3>👤 Persona 1 : Marie - L'utilisatrice novice</h3>
+        
+        <div class="scenario-timeline">
+            <div class="scenario-event">
+                <div class="event-number">1</div>
+                <div class="event-content">
+                    <h4>Événement 1</h4>
+                    <p class="event-description">[Description de l'événement 1 pour Marie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">2</div>
+                <div class="event-content">
+                    <h4>Événement 2</h4>
+                    <p class="event-description">[Description de l'événement 2 pour Marie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">3</div>
+                <div class="event-content">
+                    <h4>Événement 3</h4>
+                    <p class="event-description">[Description de l'événement 3 pour Marie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">4</div>
+                <div class="event-content">
+                    <h4>Événement 4</h4>
+                    <p class="event-description">[Description de l'événement 4 pour Marie]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persona 2 - Thomas -->
+    <div class="scenario-container">
+        <h3>👤 Persona 2 : Thomas - L'utilisateur avancé</h3>
+        
+        <div class="scenario-timeline">
+            <div class="scenario-event">
+                <div class="event-number">1</div>
+                <div class="event-content">
+                    <h4>Événement 1</h4>
+                    <p class="event-description">[Description de l'événement 1 pour Thomas]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">2</div>
+                <div class="event-content">
+                    <h4>Événement 2</h4>
+                    <p class="event-description">[Description de l'événement 2 pour Thomas]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">3</div>
+                <div class="event-content">
+                    <h4>Événement 3</h4>
+                    <p class="event-description">[Description de l'événement 3 pour Thomas]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">4</div>
+                <div class="event-content">
+                    <h4>Événement 4</h4>
+                    <p class="event-description">[Description de l'événement 4 pour Thomas]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persona 3 - Sophie -->
+    <div class="scenario-container">
+        <h3>👤 Persona 3 : Sophie - L'utilisatrice occasionnelle</h3>
+        
+        <div class="scenario-timeline">
+            <div class="scenario-event">
+                <div class="event-number">1</div>
+                <div class="event-content">
+                    <h4>Événement 1</h4>
+                    <p class="event-description">[Description de l'événement 1 pour Sophie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">2</div>
+                <div class="event-content">
+                    <h4>Événement 2</h4>
+                    <p class="event-description">[Description de l'événement 2 pour Sophie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">3</div>
+                <div class="event-content">
+                    <h4>Événement 3</h4>
+                    <p class="event-description">[Description de l'événement 3 pour Sophie]</p>
+                </div>
+            </div>
+            
+            <div class="scenario-event">
+                <div class="event-number">4</div>
+                <div class="event-content">
+                    <h4>Événement 4</h4>
+                    <p class="event-description">[Description de l'événement 4 pour Sophie]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
         <section id="interaction-points">
     <h2>🎯 Points d'Interaction</h2>
     <p style="margin-bottom: 30px; color: #666;">Analyse des points d'interaction clés pour chaque persona</p>
