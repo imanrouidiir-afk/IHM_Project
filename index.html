@@ -252,6 +252,64 @@
                 padding: 20px;
             }
         }
+        /* Styles pour les points d'interaction */
+.persona-interaction {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.interaction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.interaction-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.interaction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.interaction-card h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    background: #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.interaction-description {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
     </style>
 </head>
 <body>
@@ -267,6 +325,7 @@
                 <li><a href="#interviews">Interviews</a></li>
                 <li><a href="#problemes">Problèmes</a></li>
                 <li><a href="#personas">Personas</a></li>
+                <li><a href="#interaction-points">Points d'Interaction</a></li>
                 <li><a href="#brainstorming">Brainstorming</a></li>
             </ul>
         </nav>
@@ -330,7 +389,7 @@
     <h3>Dounya</h3>
     <div>
         <button class="interview-toggle" onclick="toggleInterview('Dounya')">📝 Interview 1</button>
-        <div id="lucie1" class="interview-content">
+        <div id="dounya1" class="interview-content">
             <p><strong>Date:</strong> [30/01/2026]</p>
             <hr style="margin: 10px 0;">
             <a href="https://docs.google.com/document/d/1-jB_f2JFZ8ZF9K6cdY4Rb9nw31jdDpCXB1nVGxH_gWk/edit?tab=t.xaw8aqc0levk" 
@@ -391,6 +450,94 @@
                 </li>
             </ul>
         </section>
+        <section id="interaction-points">
+    <h2>🎯 Points d'Interaction</h2>
+    <p style="margin-bottom: 30px; color: #666;">Analyse des points d'interaction clés pour chaque persona</p>
+    
+    <!-- Persona 1 -->
+    <div class="persona-interaction">
+        <h3>👤 Marie - L'utilisatrice novice</h3>
+        <div class="interaction-grid">
+            <div class="interaction-card">
+                <h4>Point d'interaction 1</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-marie-1.png" alt="Interaction Marie 1">
+                </div>
+                <p class="interaction-description">Description du premier point d'interaction pour Marie</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 2</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-marie-2.png" alt="Interaction Marie 2">
+                </div>
+                <p class="interaction-description">Description du deuxième point d'interaction pour Marie</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 3</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-marie-3.png" alt="Interaction Marie 3">
+                </div>
+                <p class="interaction-description">Description du troisième point d'interaction pour Marie</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persona 2 -->
+    <div class="persona-interaction">
+        <h3>👤 Thomas - L'utilisateur avancé</h3>
+        <div class="interaction-grid">
+            <div class="interaction-card">
+                <h4>Point d'interaction 1</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-thomas-1.png" alt="Interaction Thomas 1">
+                </div>
+                <p class="interaction-description">Description du premier point d'interaction pour Thomas</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 2</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-thomas-2.png" alt="Interaction Thomas 2">
+                </div>
+                <p class="interaction-description">Description du deuxième point d'interaction pour Thomas</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 3</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-thomas-3.png" alt="Interaction Thomas 3">
+                </div>
+                <p class="interaction-description">Description du troisième point d'interaction pour Thomas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persona 3 -->
+    <div class="persona-interaction">
+        <h3>👤 Sophie - L'utilisatrice occasionnelle</h3>
+        <div class="interaction-grid">
+            <div class="interaction-card">
+                <h4>Point d'interaction 1</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-sophie-1.png" alt="Interaction Sophie 1">
+                </div>
+                <p class="interaction-description">Description du premier point d'interaction pour Sophie</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 2</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-sophie-2.png" alt="Interaction Sophie 2">
+                </div>
+                <p class="interaction-description">Description du deuxième point d'interaction pour Sophie</p>
+            </div>
+            <div class="interaction-card">
+                <h4>Point d'interaction 3</h4>
+                <div class="image-placeholder">
+                    <img src="chemin/vers/image-sophie-3.png" alt="Interaction Sophie 3">
+                </div>
+                <p class="interaction-description">Description du troisième point d'interaction pour Sophie</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="brainstorming">
             <h2>💡 Brainstorming</h2>
