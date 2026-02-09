@@ -213,24 +213,34 @@
 
         .brainstorm-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 8px;
             margin-top: 20px;
         }
 
         .brainstorm-card {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
-            transition: all 0.3s ease;
             border: 2px solid transparent;
         }
 
-        .brainstorm-card:hover {
-            border-color: #667eea;
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+
+        .brainstorm-postits {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        .brainstorm-postit {
+            width: 135px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
 
         footer {
@@ -399,6 +409,167 @@
         width: 30px;
         height: 30px;
         font-size: 0.9em;
+    }
+}
+
+/* Styles pour la matrice Design Space */
+.design-space-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.design-space-matrix {
+    position: relative;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 4 / 3;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.axis-line {
+    position: absolute;
+    background: #ddd;
+}
+
+.axis-line.horizontal {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+}
+
+.axis-line.vertical {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+}
+
+.quadrant-label {
+    position: absolute;
+    font-size: 0.85em;
+    color: #999;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+    pointer-events: none;
+}
+
+.quadrant-label.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.quadrant-label.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.quadrant-label.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.quadrant-label.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.design-item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.design-item:hover .item-image {
+    transform: scale(1.2);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    border-color: #764ba2;
+}
+
+/* Popup pour l'affichage au survol */
+.design-item-popup {
+    position: fixed;
+    display: none;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 250px;
+    max-width: 350px;
+    pointer-events: none;
+}
+
+.design-item-popup.active {
+    display: block;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.popup-content p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .design-space-matrix {
+        aspect-ratio: 2 / 2.5;
+    }
+    
+    .item-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .quadrant-label {
+        font-size: 0.7em;
+    }
+
+    .design-item-popup {
+        min-width: 200px;
+        max-width: 280px;
+        padding: 15px;
     }
 }
     </style>
@@ -743,45 +914,150 @@
 
         <section id="brainstorming">
             <h2>💡 Brainstorming</h2>
-            <p>Idées et solutions proposées pour améliorer l'interface:</p>
+            <p>Dimensions abordées dans nos idées :</p>
             
             <div class="brainstorm-grid">
                 <div class="brainstorm-card">
-                    <h4>🎨 Design</h4>
-                    <p>Interface minimaliste et épurée</p>
+                    <h4>🤖 Technologie</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <--------------------------------------------------------------------------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_45.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_19.jpg" alt="Post-it 2">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_9.jpg" alt="Post-it 3">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_18.jpg" alt="Post-it 4">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_2.jpg" alt="Post-it 5">
+                    </div>
                 </div>
                 <div class="brainstorm-card">
-                    <h4>🔍 Navigation</h4>
-                    <p>Menu contextuel intelligent</p>
+                    <h4>🔒 Vie Privée</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <----------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_3.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_1.jpg" alt="Post-it 2">
+                    </div>
                 </div>
                 <div class="brainstorm-card">
-                    <h4>📱 Mobile First</h4>
-                    <p>Optimisation mobile prioritaire</p>
+                    <h4>🧭 Intrusivité</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <--------------------------------------------------------------------------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_53.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_61.jpg" alt="Post-it 2">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_60.jpg" alt="Post-it 3">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_59.jpg" alt="Post-it 4">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_58.jpg" alt="Post-it 5">
+                    </div>
                 </div>
                 <div class="brainstorm-card">
-                    <h4>♿ Accessibilité</h4>
-                    <p>Support complet WCAG 2.1</p>
+                    <h4>🧬 Transhumanisme</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <----------------------------------------------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_37.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_38.jpg" alt="Post-it 2">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_39.jpg" alt="Post-it 3">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_5.jpg" alt="Post-it 4">
+                    </div>
                 </div>
                 <div class="brainstorm-card">
-                    <h4>🎓 Onboarding</h4>
-                    <p>Tutoriel interactif</p>
+                    <h4>🎒 Portabilité</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <--------------------------------------------------------------------------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_41.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_32.jpg" alt="Post-it 2">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_36.jpg" alt="Post-it 3">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_34.jpg" alt="Post-it 4">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_33.jpg" alt="Post-it 5">
+                    </div>
                 </div>
                 <div class="brainstorm-card">
-                    <h4>⚡ Performance</h4>
-                    <p>Chargement progressif</p>
-                </div>
-                <div class="brainstorm-card">
-                    <h4>🔔 Notifications</h4>
-                    <p>Système de feedback temps réel</p>
-                </div>
-                <div class="brainstorm-card">
-                    <h4>🌙 Mode sombre</h4>
-                    <p>Thème adaptatif</p>
+                    <h4>🧑‍✈️ Déplacement non controlé</h4>
+                    <div style="margin: 10px 0; color: #667eea; font-size: 1.2em;">➖ <----------------------------------------------------> ➕</div>
+                    <div class="brainstorm-postits">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_40.jpg" alt="Post-it 1">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_41.jpg" alt="Post-it 2">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_22.jpg" alt="Post-it 3">
+                        <img class="brainstorm-postit" src="images/CamScanner 9-2-2026 12.30n_26.jpg" alt="Post-it 4">
+                    </div>
                 </div>
             </div>
 
-            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-                <h3>Solutions retenues</h3>
+            <div style="margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px;">
+                <h3 style="margin-bottom: 25px;">📊 Design Space - Matrice Originalité / Faisabilité</h3>
+                
+                <div class="design-space-container">
+                    <div class="design-space-matrix">
+                        <!-- Axe horizontal -->
+                        <div class="axis-line horizontal"></div>
+                        <!-- Axe vertical -->
+                        <div class="axis-line vertical"></div>
+                        
+                        <!-- Labels des quadrants -->
+                        <div class="quadrant-label top-left">Peu Original<br>Difficile</div>
+                        <div class="quadrant-label top-right">Original<br>Difficile</div>
+                        <div class="quadrant-label bottom-left">Peu Original<br>Facile</div>
+                        <div class="quadrant-label bottom-right">Original<br>Facile</div>
+                        
+                        <!-- Post-its positionnables -->
+                        <div class="design-item" style="top: 80%; left: 15%;" data-image="images/CamScanner 9-2-2026 12.30n_1.jpg" data-description="Idée 1: Amélioration de la signalisation">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_1.jpg" alt="Post-it 1">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 75%; left: 70%;" data-image="images/CamScanner 9-2-2026 12.30n_2.jpg" data-description="Idée 2: Application mobile intelligente">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_2.jpg" alt="Post-it 2">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 50%; left: 25%;" data-image="images/CamScanner 9-2-2026 12.30n_3.jpg" data-description="Idée 3: Écrans tactiles interactifs">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_3.jpg" alt="Post-it 3">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 70%; left: 55%;" data-image="images/CamScanner 9-2-2026 12.30n_4.jpg" data-description="Idée 4: Système de notifications temps réel">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_4.jpg" alt="Post-it 4">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 40%; left: 70%;" data-image="images/CamScanner 9-2-2026 12.30n_5.jpg" data-description="Idée 5: Interface AR/VR pour navigation">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_5.jpg" alt="Post-it 5">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 50%; left: 40%;" data-image="images/CamScanner 9-2-2026 12.30n_6.jpg" data-description="Idée 6: Guides de piétons alimentés">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_6.jpg" alt="Post-it 6">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 30%; left: 20%;" data-image="images/CamScanner 9-2-2026 12.30n_7.jpg" data-description="Idée 7: Ascenseurs additionnels">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_7.jpg" alt="Post-it 7">
+                            </div>
+                        </div>
+                        
+                        <div class="design-item" style="top: 35%; left: 50%;" data-image="images/CamScanner 9-2-2026 12.30n_8.jpg" data-description="Idée 8: Système de routage adaptatif">
+                            <div class="item-image">
+                                <img src="images/CamScanner 9-2-2026 12.30n_8.jpg" alt="Post-it 8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popup pour afficher les détails au survol -->
+                <div class="design-item-popup" id="designItemPopup">
+                    <div class="popup-content">
+                        <img id="popupImage" src="" alt="Post-it">
+                        <p id="popupDescription"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <h3>✅ Solutions retenues</h3>
                 <ol style="padding-left: 20px;">
                     <li><strong>Refonte de la navigation:</strong> Implémenter un menu hamburger avec catégories claires</li>
                     <li><strong>Système de tutoriels:</strong> Créer des guides interactifs pour les nouvelles fonctionnalités</li>
@@ -845,6 +1121,55 @@
                     link.style.color = 'white';
                 }
             });
+        });
+
+        // Gestion des items du Design Space
+        const designItems = document.querySelectorAll('.design-item');
+        const popup = document.getElementById('designItemPopup');
+        const popupImage = document.getElementById('popupImage');
+        const popupDescription = document.getElementById('popupDescription');
+
+        designItems.forEach(item => {
+            item.addEventListener('mouseenter', function(e) {
+                const image = this.getAttribute('data-image');
+                const description = this.getAttribute('data-description');
+                
+                popupImage.src = image;
+                popupDescription.textContent = description;
+                
+                // Positionner la popup près du curseur
+                const rect = this.getBoundingClientRect();
+                popup.style.left = (rect.left + window.scrollX - 180) + 'px';
+                popup.style.top = (rect.top + window.scrollY - 240) + 'px';
+                
+                popup.classList.add('active');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                popup.classList.remove('active');
+            });
+            
+            // Pour le touch (mobile)
+            item.addEventListener('touchstart', function(e) {
+                const image = this.getAttribute('data-image');
+                const description = this.getAttribute('data-description');
+                
+                popupImage.src = image;
+                popupDescription.textContent = description;
+                
+                const rect = this.getBoundingClientRect();
+                popup.style.left = (rect.left + window.scrollX - 180) + 'px';
+                popup.style.top = (rect.top + window.scrollY - 240) + 'px';
+                
+                popup.classList.add('active');
+            });
+        });
+
+        // Fermer la popup en cliquant ailleurs
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.design-item') && !e.target.closest('.design-item-popup')) {
+                popup.classList.remove('active');
+            }
         });
     </script>
 </body>
