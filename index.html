@@ -428,7 +428,7 @@
     background: white;
     border: 2px solid #667eea;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
@@ -487,6 +487,11 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.design-item:hover {
+    z-index: 100;
 }
 
 .item-image {
@@ -507,9 +512,33 @@
 }
 
 .design-item:hover .item-image {
-    transform: scale(1.2);
+    transform: scale(4);
     box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
     border-color: #764ba2;
+}
+
+.item-description {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(102, 126, 234, 0.95);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-top: 5px;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.design-item:hover .item-description {
+    opacity: 1;
+    margin-top: 95px;
 }
 
 /* Popup pour l'affichage au survol */
@@ -997,52 +1026,46 @@
                         <div class="quadrant-label bottom-right">Original<br>Facile</div>
                         
                         <!-- Post-its positionnables -->
-                        <div class="design-item" style="top: 80%; left: 15%;" data-image="images/CamScanner 9-2-2026 12.30n_1.jpg" data-description="Idée 1: Amélioration de la signalisation">
+                        <div class="design-item" style="top: 83%; left: 15%;" data-image="images/CamScanner 9-2-2026 12.30n_1.jpg" data-description="Idée 1: Amélioration de la signalisation">
                             <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_1.jpg" alt="Post-it 1">
+                                <img src="images/CamScanner 9-2-2026 12.30n_56.jpg" alt="Post-it 1">
                             </div>
+                            <span class="item-description">Stickers de pas qui montrent la direction au sol</span>
                         </div>
                         
-                        <div class="design-item" style="top: 75%; left: 70%;" data-image="images/CamScanner 9-2-2026 12.30n_2.jpg" data-description="Idée 2: Application mobile intelligente">
+                        <div class="design-item" style="top: 25%; left: 20%;" data-image="images/CamScanner 9-2-2026 12.30n_2.jpg" data-description="Idée 2: Application mobile intelligente">
                             <div class="item-image">
                                 <img src="images/CamScanner 9-2-2026 12.30n_2.jpg" alt="Post-it 2">
                             </div>
+                            <span class="item-description">Voitures volantes</span>
                         </div>
                         
-                        <div class="design-item" style="top: 50%; left: 25%;" data-image="images/CamScanner 9-2-2026 12.30n_3.jpg" data-description="Idée 3: Écrans tactiles interactifs">
+                        <div class="design-item" style="top: 6%; left: 35%;" data-image="images/CamScanner 9-2-2026 12.30n_3.jpg" data-description="Idée 3: Écrans tactiles interactifs">
                             <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_3.jpg" alt="Post-it 3">
+                                <img src="images/CamScanner 9-2-2026 12.30n_24.jpg" alt="Post-it 3">
                             </div>
+                            <span class="item-description">Téléportation</span>
                         </div>
                         
-                        <div class="design-item" style="top: 70%; left: 55%;" data-image="images/CamScanner 9-2-2026 12.30n_4.jpg" data-description="Idée 4: Système de notifications temps réel">
+                        <div class="design-item" style="top: 15%; left: 80%;" data-image="images/CamScanner 9-2-2026 12.30n_4.jpg" data-description="Idée 4: Système de notifications temps réel">
                             <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_4.jpg" alt="Post-it 4">
+                                <img src="images/CamScanner 9-2-2026 12.30n_26.jpg" alt="Post-it 4">
                             </div>
+                            <span class="item-description">Oiseaux géants qui transportent les humains à destination</span>
                         </div>
                         
-                        <div class="design-item" style="top: 40%; left: 70%;" data-image="images/CamScanner 9-2-2026 12.30n_5.jpg" data-description="Idée 5: Interface AR/VR pour navigation">
+                        <div class="design-item" style="top: 70%; left: 75%;" data-image="images/CamScanner 9-2-2026 12.30n_5.jpg" data-description="Idée 5: Interface AR/VR pour navigation">
                             <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_5.jpg" alt="Post-it 5">
+                                <img src="images/CamScanner 9-2-2026 12.30n_20.jpg" alt="Post-it 5">
                             </div>
+                            <span class="item-description">Scan de l'environnement avec le téléphone qui nous indique le chemin</span>
                         </div>
                         
-                        <div class="design-item" style="top: 50%; left: 40%;" data-image="images/CamScanner 9-2-2026 12.30n_6.jpg" data-description="Idée 6: Guides de piétons alimentés">
+                        <div class="design-item" style="top: 70%; left: 25%;" data-image="images/CamScanner 9-2-2026 12.30n_6.jpg" data-description="Idée 6: Guides de piétons alimentés">
                             <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_6.jpg" alt="Post-it 6">
+                                <img src="images/CamScanner 9-2-2026 12.30n_53.jpg" alt="Post-it 6">
                             </div>
-                        </div>
-                        
-                        <div class="design-item" style="top: 30%; left: 20%;" data-image="images/CamScanner 9-2-2026 12.30n_7.jpg" data-description="Idée 7: Ascenseurs additionnels">
-                            <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_7.jpg" alt="Post-it 7">
-                            </div>
-                        </div>
-                        
-                        <div class="design-item" style="top: 35%; left: 50%;" data-image="images/CamScanner 9-2-2026 12.30n_8.jpg" data-description="Idée 8: Système de routage adaptatif">
-                            <div class="item-image">
-                                <img src="images/CamScanner 9-2-2026 12.30n_8.jpg" alt="Post-it 8">
-                            </div>
+                            <span class="item-description">Ecran numérique du nom de la station d'arrêt</span>
                         </div>
                     </div>
                 </div>
