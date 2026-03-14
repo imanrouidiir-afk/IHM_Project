@@ -577,7 +577,34 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
 }
+/* Positionnement des flèches de la matrice */
 
+.axis-arrow {
+    position: absolute;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Flèche horizontale */
+.horizontal-arrow {
+    top: -40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Flèche verticale */
+.vertical-arrow {
+    left: -70px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 /* Popup pour l'affichage au survol */
 .design-item-popup {
     position: fixed;
