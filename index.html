@@ -52,9 +52,6 @@
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 5px;
-            z-index: 100;
         }
 
         nav ul {
@@ -685,6 +682,8 @@
                 <li><a href="#brainstorming">Brainstorming</a></li>
                 <li><a href="#videos">Prototypes vidéos</a></li>
                 <li><a href="#solution">Description du prototype</a></li>
+                <li><a href="#evaluation">Evaluation</a></li>
+                <li><a href="#projet-futur">Projet futur</a></li>
             </ul>
         </nav>
 
@@ -1187,7 +1186,7 @@
                 <ol style="padding-left: 20px;">
                     <li><strong>Lunettes connectées:</strong> Naviguation visuelle avec signaux haptiques et auditifs.</li>
                     <li><strong>Scan de localisation:</strong> Permet aux appareils de scanner un QR code qui indique leur localisation précise si le siganal est perdu.</li>
-                    <li><strong>Chaussures intelligentes:</strong> Chaussures de type overboard qui nous déplace à destination.</li>
+                    <li><strong>Gestion du stress:</strong> Evitement des foules, réduction de la surcharge sensorielle.</li>
                 </ol>
             </div>
         </section>
@@ -1209,14 +1208,6 @@
                     <div style="display: flex; justify-content: center; margin-top: 20px;">
                         <video width="640" height="360" controls style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
                             <source src="images/video_2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                <li>
-                    <strong>Prototype 3</strong>
-                </li>
-                    <div style="display: flex; justify-content: center; margin-top: 20px;">
-                        <video width="640" height="360" controls style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
-                            <source src="images/video_3.mp4" type="video/mp4">
                         </video>
                     </div>
             </ul>
@@ -1252,6 +1243,118 @@
                 centrée sur l’adaptation cognitive et l’agentivité de l’utilisateur.
             </p>
 
+        </section>
+
+        <section id="evaluation">
+            <h2>📊 Evaluation</h2>
+
+            <h3>Méthode quantitative</h3>
+            <div class="event-content" style="margin-top: 10px; margin-bottom: 20px;">
+                <h4>Quantitative method - System Usability Scale Adapted</h4>
+                <ol style="padding-left: 20px; margin: 0;">
+                    <li>Je pense que j’utiliserais ce système si j’avais accès à ce type de lunettes.</li>
+                    <li>Le fonctionnement de ce système me semble inutilement complexe.</li>
+                    <li>Le système me semble facile à comprendre.</li>
+                    <li>Je pense que j’aurais besoin d’une assistance importante pour comprendre comment l’utiliser.</li>
+                    <li>Les différentes fonctionnalités (guidage, filtres d’informations, gestion du stress, etc.) me semblent bien intégrées.</li>
+                    <li>Le système me semble manquer de cohérence dans son fonctionnement.</li>
+                    <li>Je pense que la plupart des utilisateurs comprendraient rapidement comment utiliser ces lunettes.</li>
+                    <li>Le système me semble contraignant ou intrusif.</li>
+                    <li>Je me sentirais confiant(e) en utilisant ce système dans une station.</li>
+                    <li>Je pense qu’il faudrait beaucoup d’apprentissage avant de se sentir à l’aise avec ce système.</li>
+                </ol>
+            </div>
+
+            <h4>Résultats</h4>
+            <div style="display: flex; justify-content: center; margin-top: 15px; margin-bottom: 20px;">
+                <img src="images/results.png" alt="Results" style="max-width: 100%; width: 700px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);">
+            </div>
+            <ul class="problem-list">
+                <p><strong>8 participants</strong></p>
+                <p>SUS moyen : 67.86</p>
+                <p>Écart-type: 9.73</p>
+                <br>
+                <p><u>Dimensions moyennes :</u></p>
+                <p>Acceptance confidence : 50.000000</p>
+                <p>Learnability : 71.428571</p>
+                <p>Complexity : 80.357143</p>
+                <p>Coherence : 76.785714</p>
+                <p><strong>Interpretation : Système acceptable à bon</strong></p>
+            </ul>
+
+            <h3>Méthode qualitative</h3>
+            <div class="event-content" style="margin-top: 10px; margin-bottom: 20px;">
+                <h4>Complétion de phrases</h4>
+                <ol style="padding-left: 20px; margin: 0;">
+                    <li>Première impression : Après avoir visionner la vidéos, ma première impression est ... </li>
+                    <li>Perception globale : Ce concepte de lunette de réalité augmentée est .... </li>
+                    <li>Utilité : Au quotidien ce système peut être utile pour .... </li>
+                    <li>Besoins : J'aurais besoin que ces lunettes soient ... </li>
+                    <li>Problème : Le principal défaut de ce système est ...</li>
+                    <li>Emotions positives: Ce que je préfère dans ce système c'est ... </li>
+                    <li>Emotions négatives : Ce qui m'inquiète le plus avec ces lunettes c'est ...</li>
+                    <li>Suggestions: Je pense qu'on pourrait améliorer ce système en ... </li>
+                    <li>Engagement: Ce système me serait indispensable pour ... </li>
+                    <li>Comparaison : Par rapport ce que j'utilise habituellement, ce système est ... </li>
+                    <li>Croyance: Selon moi, ce type de système est s'adresse à ... </li>
+                    <li>Recommandations: Je recommanderais ce système à mon entourage parce que ...</li>
+                    <li>Intention : Je serai prêt à acheter ce produit si ... </li>
+                    <li>Valeurs : Ce qui est important pour les utilisateurs de ce système est ... </li>
+                </ol>
+            </div>
+
+            <h4>Résultats</h4>
+                <div style="margin-top: 10px;">
+                    <p><strong>Principaux avantages</strong></p>
+                    <p>Faible charge cognitive : navigation mains libres, évitement des foules, indicateurs visuels au sol.</p>
+                    <p>Indique les sorties optimales, les places disponibles, ainsi que le niveau d'urgence dans les métros.</p>
+                    <br>
+                    <p><strong>Points d'attention UX</strong></p>
+                    <p>Dépendance aux lunettes : peu pratique au quotidien. L'autonomie limitée, le volume de l'appareil et le risque de vol dans les stations réduisent la confiance des utilisateurs.</p>
+                    <p>Mauvaise calibration via QR code pour la localisation. Une approche de réalité augmentée basée sur l'analyse de l'environnement via smartphone serait plus facile.</p>
+                    <br>
+                    <p><strong>Atouts</strong></p>
+                    <p>Les flèches visuelles au sol s'avèrent efficaces, à condition de limiter la surcharge d'informations et d'adapter l'affichage aux besoins de l'utilisateur.</p>
+                    <p>Éviter les fonctionnalités superflues pour certains utilisateurs, comme la gestion de l'anxiété liée à la foule.</p>
+                    <br>
+                    <p><strong>Limites</strong></p>
+                    <p>Le prototype actuel paraît approximatif : les lunettes doivent s'intégrer de manière fluide et esthétique.</p>
+                    <p>Le design nécessite une phase de raffinement au-delà du stade de prototype.</p>
+                    <br>
+                    <p><strong>Conditions d'adoption</strong></p>
+                    <p>Le système doit être hautement fonctionnel, facile à démocratiser, et assurer une guidance précise sans calibration complexe.</p>
+                    <p>Intégrer des boutons de sécurité et une navigation fiable.</p>
+                    <p>Les utilisateurs ne sont pas prêts à acheter des lunettes dédiées (type Ray-Ban Meta) : une intégration logicielle dans des dispositifs existants est à privilégier.</p>
+                    <p>Nécessité d'un usage continuel et polyvalent tout au long de la journée pour une meilleure adoption du sytème.</p>
+                </div>
+        </section>
+
+        <section id="projet-futur">
+            <h2>🚀 Projet futur</h2>
+            <p>
+                Dans une version future du projet, nous souhaiterions approfondir la proposition afin de la rendre plus réaliste, plus accessible et plus facile à intégrer dans le quotidien des usagers.
+                L'objectif serait de conserver les points forts du concept actuel, tout en réduisant les freins liés au matériel, à l'apprentissage et à l'acceptabilité sociale.
+            </p>
+            <br>
+            <p>
+                Une première piste consisterait à adapter le système à des supports déjà largement utilisés, comme le smartphone ou des lunettes déjà présentes sur le marché.
+                Cela permettrait de proposer une expérience de navigation augmentée sans imposer un équipement trop spécifique, coûteux ou encombrant.
+            </p>
+            <br>
+            <p>
+                Nous aimerions également travailler davantage sur la précision de la localisation, la clarté des indications visuelles et la personnalisation des trajets.
+                Un partenariat avec les opérateurs de transport pourrait nous permettre de mieux intégrer des données en temps réel sur l'affluence, les perturbations ou les conditions de circulation, afin d'offrir une navigation plus intelligente et réactive.
+            </p>
+            <br>
+            <p>        
+                À terme, le système pourrait mieux prendre en compte les besoins variés des utilisateurs, par exemple l'évitement des escaliers, la réduction de la surcharge cognitive ou la recherche d'itinéraires moins fréquentés.
+                Notamment, il serait important de faciliter l'accès aux personnes possédant un handicap à ce dispositif : lunettes intégrant une correction de vue ou colorimétrie adaptée, ou encore une interface entièrement basée sur des signaux haptiques et auditifs.
+                Nous souhaiterions également intégrer des fonctionnalités de sécurité, comme des boutons d'urgence ou des alertes en cas de situation à risque.
+            </p>
+            <br>
+            <p>    
+                Une phase de tests supplémentaires permettrait enfin d'affiner l'interface et de valider les choix de conception dans des situations proches de l'usage réel.
+            </p>
         </section>
 
         <footer>
